@@ -3,9 +3,9 @@ import * as types from "./action.types";
 
 export const register = (payload) => (dispatch) => {
   return axios
-    .post("http://localhost:8080/register", payload)
+    .post("http://localhost:8080/register",payload)
     .then((res) => {
-      console.log(res.data);
+      console.log(res);
       return { status: types.REGISTERSUCCESS };
     })
     .catch((er) => {
@@ -16,6 +16,7 @@ export const register = (payload) => (dispatch) => {
       };
     });
 };
+
 
 export const login = (payload) => (dispatch) => {
   dispatch({ type: types.LOGINREQUEST });
@@ -70,6 +71,6 @@ export const allregister = (payload) => (dispatch) => {
     })
     .catch((er) => {
       console.log("register Error from FE", er.response.data);
-      dispatch({type: types.REGISTERREJECTED});
+      dispatch({type: types.ALLREGISTERREJECTED});
     });
 };

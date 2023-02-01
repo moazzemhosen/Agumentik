@@ -4,9 +4,8 @@ const initState = {
   isLoading: false,
   isError: false,
   imgData: [],
-  personalTodo: [],
   socialIcon: [],
-  othersTodo: [],
+ 
 };
 
 export const appReducer = (state = initState, { type, payload }) => {
@@ -87,23 +86,11 @@ case types.SOCIALUPDATEDATA_REJECTED:
       return { ...state, isLoading: true, isError: false };
 
     case types.POSTDATA_SUCCESS:
-      let updatedTodos = [...state.allTodo, payload];
-      // console.log("consoling updated data",updatedTodos)
-      const updatedPersonal = updatedTodos.filter(
-        (e) => e.tags.Personal === true
-      );
-      const updatedOfficial = updatedTodos.filter(
-        (e) => e.tags.Official === true
-      );
-      const updatedOthers = updatedTodos.filter((e) => e.tags.Others === true);
+      
       return {
         ...state,
         isLoading: false,
         isError: false,
-        imgData: updatedTodos,
-        personalTodo: updatedPersonal,
-        socialIcon: updatedOfficial,
-        othersTodo: updatedOthers,
       };
     case types.POSTDATA_REJECTED:
       return { ...state, isLoading: false, isError: true };
@@ -113,22 +100,14 @@ case types.SOCIALUPDATEDATA_REJECTED:
       return { ...state, isLoading: true, isError: false };
 
     case types.DELETEDATA_SUCCESS:
-      let deletedTodos = state.allTodo.filter((e) => e._id !== payload._id);
-      const deletedPersonal = deletedTodos.filter(
-        (e) => e.tags.Personal === true
-      );
-      const deletedOfficial = deletedTodos.filter(
-        (e) => e.tags.Official === true
-      );
-      const deletedOthers = deletedTodos.filter((e) => e.tags.Others === true);
+    
+    
+     
       return {
         ...state,
         isLoading: false,
         isError: false,
-        imgData: deletedTodos,
-        personalTodo: deletedPersonal,
-        socialIcon: deletedOfficial,
-        othersTodo: deletedOthers,
+       
       };
     case types.DELETEDATA_REJECTED:
       return { ...state, isLoading: false, isError: true };

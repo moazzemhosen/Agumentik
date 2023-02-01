@@ -31,6 +31,7 @@ export const authReducer = (state = initState, { type, payload }) => {
     case types.LOGINREJECTED:
       return { ...state, isLoading: false, isError: true };
 
+      
     case types.REGISTERREQUEST:
       return { ...state, isLoading: true, isError: false };
 

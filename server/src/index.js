@@ -5,7 +5,7 @@ const {
   login,
   register,
 } = require("./controllers/auth.controller");
-var cors = require("cors");
+const cors = require("cors");
 const app = express();
 
 app.use(express.json());
@@ -44,6 +44,7 @@ app.post(
   body("phone")
     .isLength({ min: 10, max: 10 })
     .withMessage("Phone number should be ten degit Long"),
+    body("role"),
   register
 );
 

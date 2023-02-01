@@ -15,6 +15,7 @@ import {
   ModalOverlay,
   useDisclosure,
   Modal,
+  Heading,
 } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { getData, geticonData } from "../Redux/app/action";
@@ -56,12 +57,13 @@ const Home = () => {
     dispatch(geticonData());
   }, []);
   return (
-    <Box onClick={onOpen}>
-      <Grid gridTemplateColumns={"repeat(4,1fr)"}>
+    <Box >
+      <Grid gridTemplateColumns={"repeat(4,1fr)"} onClick={onOpen}>
         {image.map((e) => (
-          <SingleCard key={e._id} data={e} />
+          <SingleCard key={e._id} data={e}  />
         ))}
       </Grid>
+      <Heading as='h4' size='md' w={"100%"} m={"auto"}>Social Icon</Heading>
       <Flex justifyContent={"center"} alignItems={"center"}>
         {social.map((e) => {
           return <IconCard key={e._id} data={e} />;

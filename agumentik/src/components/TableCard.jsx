@@ -33,7 +33,7 @@ const TableCard = () => {
           <Th></Th>
           <Th></Th>
           <Th></Th>
-          <Th>Total user:{alluser.length}</Th>
+          <Th>Total user</Th>
         </Tr>
       </Tfoot>
     </Table>

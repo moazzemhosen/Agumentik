@@ -37,21 +37,6 @@ export const geticonData = (props) => (dispatch) => {
 
 
 
-export const postData = (payload) => (dispatch) => {
-  dispatch({ type: types.POSTDATA_REQUEST });
-  return axios
-    .post("/todo/post", payload)
-    .then((res) => {
-      //console.log(res.data);
-      dispatch({ type: types.POSTDATA_SUCCESS, payload: res.data});
-      return { status: types.POSTDATA_SUCCESS };
-    })
-    .catch((err) => {
-      dispatch({ type: types.POSTDATA_REJECTED });
-      console.log("error from post data action ", err);
-      return { status: types.POSTDATA_REJECTED };
-    });
-};
 
 
 export const updateData = (payload) => (dispatch) => {
