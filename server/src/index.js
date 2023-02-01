@@ -10,18 +10,16 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
- const todoController = require("./controllers/todo.controllers");
-// const userController = require("./controllers/user.controller");
- const cartController=require("./controllers/cart.controller");
+ const visitorController = require("./controllers/visitor.controllers");
+ const userController = require("./controllers/user.controller");
+const iconController=require("./controllers/icon.controller");
+const imgController=require("./controllers/img.controller");
 
-const productController=require("./controllers/product.controller");
+app.use("/",imgController);
+app.use("/icon",iconController);
 
-app.use("/",productController);
-
- app.use("/icon",cartController);
-
- app.use("/visitor", todoController);
-// app.use("/user", userController);
+ app.use("/visitor", visitorController);
+ app.use("/register/all", userController);
 
 // register
 

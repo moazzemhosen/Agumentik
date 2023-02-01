@@ -25,7 +25,8 @@ export const authReducer = (state = initState, { type, payload }) => {
         isAuth: true,
         token: payload.token,
         user: payload.user,
-        visitor:[]
+        visitor:[],
+        allregister:[]
       };
     case types.LOGINREJECTED:
       return { ...state, isLoading: false, isError: true };
@@ -57,6 +58,20 @@ export const authReducer = (state = initState, { type, payload }) => {
       };
     case types.VISITORREJECTED:
       return { ...state, isLoading: false, isError: true };
+
+
+      // all register user
+  
+      case types.ALLREGISTERREQUEST:
+        return { ...state, isLoading: true, isError: false };
+  
+      case types.ALLREGISTERSUCCESS:
+        return {
+          ...state,
+          allregister: payload,
+        };
+      case types.ALLREGISTERREJECTED:
+        return { ...state, isLoading: false, isError: true };
 
 
       // logoutpart

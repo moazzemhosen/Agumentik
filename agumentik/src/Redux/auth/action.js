@@ -59,3 +59,17 @@ export const getVisitor = (payload) => (dispatch) => {
       // return { status: types.LOGINREJECTED };
     });
 };
+
+export const allregister = (payload) => (dispatch) => {
+  dispatch({ type: types.ALLREGISTERREQUEST});
+  return axios
+    .get("http://localhost:8080/register/all", payload)
+    .then((res) => {
+      console.log(res.data);
+      dispatch({ type: types.ALLREGISTERSUCCESS,payload:res.data.users});
+    })
+    .catch((er) => {
+      console.log("register Error from FE", er.response.data);
+      dispatch({type: types.REGISTERREJECTED});
+    });
+};

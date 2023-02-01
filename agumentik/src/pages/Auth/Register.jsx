@@ -13,25 +13,29 @@ import {
   Text,
   useColorModeValue,
   useToast,
+  Select,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { register } from "../../Redux/auth/action";
-import { REGISTERREJECTED, REGISTERSUCCESS } from "../../Redux/auth/action.types";
+import {
+  REGISTERREJECTED,
+  REGISTERSUCCESS,
+} from "../../Redux/auth/action.types";
 
 export default function Register() {
   const toast = useToast();
-  const navigate=useNavigate()
-  const dispatch=useDispatch()
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
   const [form, setForm] = useState({
     name: "",
     phone: "",
     email: "",
     password: "",
-    role:"admin"
+    role: "",
   });
   const handlechange = (e) => {
     const { name, value } = e.target;
@@ -42,6 +46,7 @@ export default function Register() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    //console.log("form", form);
     dispatch(register(form)).then((res) => {
       if (res.status === REGISTERSUCCESS) {
         toast({
@@ -144,6 +149,19 @@ export default function Register() {
                   </Button>
                 </InputRightElement>
               </InputGroup>
+            </FormControl>
+            <FormControl
+              id="role"
+              isRequired
+            >
+              <FormLabel>Role</FormLabel>
+              <Select  name="role"
+              value={form.role}
+              onChange={handlechange}>
+                <option value=""></option>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </Select>
             </FormControl>
             <Stack spacing={10} pt={2}>
               <Button

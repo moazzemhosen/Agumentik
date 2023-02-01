@@ -5,19 +5,12 @@ const router = express.Router();
 
 // Create user
 
-// router.post("/", async (req, res) => {
-//   try {
-//     const user = await User.create(req.body).lean().exec();
-//     return res.status(200).send({ user, status: "User created successfully" });
-//   } catch (er) {
-//     console.log(er);
-//     return res.status(500).send({ message: er.message });
-//   }
-// });
+
 
 // get all users
 
-router.get("/", async (req, res) => {
+router.get("", async (req, res) => {
+  //console.log("Yes");
   try {
     const users = await User.find({}).lean().exec();
     return res.status(200).send({ users });

@@ -21,7 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function Navbar() {
   const isAuth=useSelector((state)=>state.auth.isAuth)
-  console.log(isAuth);
+ // console.log(isAuth);
   const dispatch=useDispatch()
   const { isOpen, onToggle } = useDisclosure();
 const handleLogout=()=>{
