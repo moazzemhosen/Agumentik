@@ -1,8 +1,8 @@
 const app = require("./index");
 const connect = require("./configs/db");
  require("dotenv").config();
-let PORT = process.env.PORT || 3000;
-app.listen(PORT, async function () {
+//let PORT = process.env.PORT;
+app.listen(process.env.PORT, async function () {
   try {
     await connect();
     console.log(`server is running on port ${PORT}`);
