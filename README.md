@@ -1,4 +1,7 @@
 # Agumentik
+# Please Read This File
+--For Run server use --npm run start
+--use npm install for download all package
 
 # Getting Started with Create React App
 
