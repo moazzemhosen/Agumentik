@@ -52,7 +52,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - dotenv
 
 ## Website view
-
+<img src="https://www.linkpicture.com/q/HomePage_1.png" type="image">
 
 
 
