@@ -52,11 +52,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - dotenv
 
 ## Website view
+## Home Page
 <img src="https://www.linkpicture.com/q/HomePage_1.png" type="image">
-
-
-
-
+## Admin Page
+<img src="https://www.linkpicture.com/q/Admin-Page.png" type="image">
+## Sign Up
+<img src="https://www.linkpicture.com/q/SignUpPage.png" type="image">
+## Login
+<img src="https://www.linkpicture.com/q/LoginPage_1.png" type="image">
 
 ## Available Scripts
 
