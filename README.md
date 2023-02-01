@@ -13,8 +13,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - react
 - react router dom
-- Chart.js
-- react-chartjs-2
 
 ### #UI
 
